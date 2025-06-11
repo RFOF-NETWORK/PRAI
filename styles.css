@@ -1,17 +1,17 @@
-/* Globale Reset- und Basis-Styles */
+/* Global Reset and Base Styles */
 html, body {
     margin: 0;
     padding: 0;
     width: 100%;
-    overflow-x: hidden;
+    overflow-x: hidden; /* Prevent horizontal scroll */
     scroll-behavior: smooth;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* A more modern, clean font */
 }
 
 body {
-    font-family: Arial, sans-serif;
     line-height: 1.6;
-    background-color: #f4f4f4;
-    color: #333;
+    background-color: #1a1a2e; /* Dark, cyberpunk background */
+    color: #e0e0e0; /* Light text for contrast */
     min-height: 100vh;
     display: flex;
     flex-direction: column;
@@ -20,62 +20,76 @@ body {
 
 /* Header Styling */
 .main-header {
-    background-color: white;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    background-color: #0f0f1a; /* Even darker header background */
+    box-shadow: 0 2px 10px rgba(0, 123, 255, 0.4); /* Blue glowing shadow */
     padding: 10px 20px;
     z-index: 100;
     position: relative;
+    border-bottom: 1px solid #007bff; /* Blue border */
 }
 
 .header-content {
-    max-width: 1200px;
+    max-width: 1400px; /* Slightly wider header content */
     margin: 0 auto;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    padding: 0 15px; /* Add some padding for smaller screens */
 }
 
 .site-title {
-    color: #007bff; /* Babyblau / Telegram/TON Blau für den Titel */
-    font-size: 2em;
+    color: #007bff; /* Baby Blue / Telegram/TON Blue for the title */
+    font-size: 2.2em; /* Slightly larger title */
     font-weight: bold;
     margin: 0;
     padding: 0;
     flex-shrink: 0;
+    text-shadow: 0 0 8px rgba(0, 123, 255, 0.8); /* More pronounced glow */
 }
 
-/* Container für den Hauptinhalt der Seite */
+/* Container for the main page content */
 .content-container {
-    max-width: 800px;
-    margin: 20px auto;
-    background: #fff;
-    padding: 30px;
-    border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    max-width: 900px; /* Wider content area */
+    margin: 30px auto;
+    background: #2a2a4a; /* Darker background for content */
+    padding: 40px; /* More padding */
+    border-radius: 12px; /* Slightly larger border radius */
+    box-shadow: 0 0 20px rgba(0, 123, 255, 0.3), inset 0 0 10px rgba(0, 123, 255, 0.2); /* Dual glow effect */
     box-sizing: border-box;
     flex-grow: 1;
     overflow: hidden;
+    border: 1px solid #007bff; /* Blue border */
 }
 
-@media (max-width: 840px) {
+@media (max-width: 960px) {
     .content-container {
         margin-left: 20px;
         margin-right: 20px;
         width: auto;
+        padding: 25px; /* Adjust padding for smaller screens */
+    }
+}
+@media (max-width: 600px) {
+    .content-container {
+        padding: 15px;
     }
 }
 
 h1, h2, h3, h4, h5, h6 {
-    color: #2c3e50;
+    color: #4CAF50; /* Greenish glow for headings */
+    text-shadow: 0 0 6px rgba(76, 175, 80, 0.6);
 }
 
 a {
-    color: #007bff;
+    color: #00eaff; /* Bright cyan for links */
     text-decoration: none;
+    transition: color 0.3s ease, text-shadow 0.3s ease;
 }
 
 a:hover {
     text-decoration: underline;
+    color: #4CAF50; /* Greenish on hover */
+    text-shadow: 0 0 5px rgba(76, 175, 80, 0.5);
 }
 
 .long-word-wrap-text {
@@ -87,53 +101,133 @@ a:hover {
 /* Footer Styling */
 footer {
     text-align: center;
-    padding: 20px;
+    padding: 25px; /* More padding */
     margin-top: auto;
-    background-color: #333;
-    color: #f4f4f4;
-    border-top: 1px solid #ddd;
+    background-color: #0f0f1a; /* Dark background */
+    color: #a0a0a0; /* Softer text color */
+    border-top: 1px solid #007bff; /* Blue border */
     width: 100%;
     flex-shrink: 0;
     box-sizing: border-box;
+    font-size: 0.9em;
+    box-shadow: 0 -2px 10px rgba(0, 123, 255, 0.4); /* Blue glowing shadow */
 }
 
-/* Styling für den "Improve this page" Container und Link */
+footer p {
+    margin-bottom: 5px;
+}
+
+footer a {
+    color: #00eaff; /* Bright cyan for footer links */
+    margin: 0 10px;
+}
+
+footer a:hover {
+    color: #4CAF50; /* Greenish on hover */
+    text-shadow: 0 0 3px rgba(76, 175, 80, 0.5);
+}
+
+/* Styling for the "Improve this page" Container and Link */
 .improve-page-container {
-    position: absolute;
-    bottom: 80px; /* Adjust based on your footer height */
-    right: 20px;
-    font-size: 0.9em;
-    color: #555;
-    text-align: right;
-    width: auto;
-    white-space: nowrap;
-    z-index: 90;
+    position: relative; /* Changed to relative to fit within content flow or position better */
+    text-align: center;
+    padding: 15px;
+    margin: 20px auto;
+    max-width: 800px;
+    background-color: #2a2a4a;
+    border: 1px solid #007bff;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 123, 255, 0.3);
+    color: #e0e0e0;
+    font-size: 1em;
+}
+
+.improve-page-container p {
+    margin: 0;
 }
 
 .improve-page-container a.improve-page-link {
-    color: #007bff;
+    color: #4CAF50; /* Greenish glow for action link */
     text-decoration: underline;
     font-weight: bold;
+    text-shadow: 0 0 5px rgba(76, 175, 80, 0.7);
 }
 
 .improve-page-container a.improve-page-link:hover {
-    color: #4CAF50;
+    color: #00eaff; /* Cyan on hover */
+    text-shadow: 0 0 8px rgba(0, 234, 255, 0.8);
 }
 
-/* Falls die Blog-Post-Inhalte spezielle Markdown-Renderings haben,
-   könnten hier zusätzliche Styles für h1, h2, p, ul, li usw. innerhalb von .content-container benötigt werden.
-   Beispiel: */
+/* Content specific styles */
 .content-container p {
     margin-bottom: 1em;
 }
 
 .content-container ul {
-    list-style-type: disc;
-    margin-left: 20px;
+    list-style-type: none; /* Remove default bullets */
+    margin-left: 0;
+    padding-left: 20px; /* Add padding for visual alignment */
     margin-bottom: 1em;
+}
+
+.content-container ul li {
+    position: relative;
+    padding-left: 25px; /* Space for custom bullet */
+    margin-bottom: 0.5em;
+}
+
+.content-container ul li::before {
+    content: '\2022'; /* Unicode bullet point */
+    color: #4CAF50; /* Greenish bullet */
+    position: absolute;
+    left: 0;
+    font-size: 1.2em;
+    line-height: 1;
 }
 
 .content-container h1, .content-container h2, .content-container h3 {
     margin-top: 1.5em;
-    margin-bottom: 0.5em;
+    margin-bottom: 0.8em; /* Slightly more space below headings */
 }
+
+/* Responsive image styling for hero section */
+#hero img {
+    max-width: 100%;
+    height: auto;
+}
+
+/* Internal Navigation for Sections Styling */
+.internal-nav-links {
+    background-color: #1f1f3a; /* Slightly lighter dark background */
+    padding: 10px 0;
+    margin-bottom: 30px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 123, 255, 0.2);
+    border: 1px solid rgba(0, 123, 255, 0.5);
+}
+
+.internal-nav-links ul {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.internal-nav-links li {
+    margin: 0 15px;
+}
+.internal-nav-links a {
+    color: #00eaff; /* Bright cyan for internal links */
+    font-weight: bold;
+    text-transform: uppercase;
+    padding: 5px 10px;
+    transition: all 0.3s ease;
+    border-radius: 4px;
+}
+
+.internal-nav-links a:hover {
+    background-color: rgba(0, 234, 255, 0.1);
+    color: #4CAF50; /* Greenish on hover */
+    text-shadow: 0 0 5px rgba(76, 175, 80, 0.5);
+        }
