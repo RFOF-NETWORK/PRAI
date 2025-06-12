@@ -10,6 +10,8 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     // Close menu when a link is clicked (especially for mobile)
+    // IMPORTANT: This only closes if the link is an internal #anchor or external URL
+    // If you add other JS-controlled behaviors to menu items, adjust this as needed.
     navLinks.querySelectorAll('a').forEach(link => {
         link.addEventListener('click', () => {
             if (navLinks.classList.contains('active')) {
