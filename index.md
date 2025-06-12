@@ -43,13 +43,14 @@
             text-shadow: 0 0 8px rgba(76, 175, 80, 0.8);
             border-bottom-color: #007bff;
         }
-        /* Cyberpunk styling for internal navigation links */
+        /* Cyberpunk styling for internal navigation links (now separated from header dropdown) */
         .internal-nav-links a {
-            color: #007bff; /* Primary link color */
+            color: #00eaff; /* Bright Cyan primary link color */
             text-decoration: none;
             position: relative;
             padding-bottom: 3px;
             transition: all 0.3s ease;
+            font-weight: bold;
         }
         .internal-nav-links a::after {
             content: '';
@@ -73,14 +74,13 @@
         }
         /* Style for emphasized text in sections */
         .content-highlight {
-            color: #6a96a0; /* A subtle accent color, slightly desaturated for content */
+            color: #a0a0a0; /* A subtle accent color, slightly desaturated for content */
             font-style: italic;
-            text-shadow: 0 0 2px rgba(106, 150, 160, 0.3);
+            text-shadow: 0 0 2px rgba(160, 160, 160, 0.3);
         }
     </style>
 </head>
-<body class="bg-[#F8F8F8]">
-    <header class="main-header">
+<body class="bg-[#1a1a2e]"> <header class="main-header">
         <div class="header-content">
             <h1 class="site-title">PRAI</h1>
             <nav class="navbar">
@@ -99,14 +99,7 @@
                     <li><a href="https://rfof-network.github.io/AegisSphera/" target="_blank">Aegis Sphera</a></li>
                     <li><a href="https://rfof-network.github.io/GeneFusioNear/" target="_blank">GeneFusioNear</a></li>
                     
-                    <li><a href="https://github.com/orgs/skills/discussions/categories/github-pages" target="_blank">Discussions</a></li>
-                    <li><a href="https://docs.github.com/en/get-started" target="_blank">GitHub Docs</a></li>
-                    <li><a href="https://github.com/explore" target="_blank">GitHub Explore</a></li>
-                    <li><a href="https://www.githubstatus.com/" target="_blank">System Status</a></li>
-                    <li><a href="https://www.contributor-covenant.org/version/2/1/code_of_conduct/code_of_conduct.md" target="_blank">Code of Conduct</a></li>
-                    <li><a href="https://gh.io/mit" target="_blank">MIT License</a></li>
-                    <li><a href="feed.xml" target="_blank">RSS Feed</a></li>
-                </ul>
+                    </ul>
             </nav>
         </div>
     </header>
@@ -128,17 +121,17 @@
             </div>
         </section>
 
-        <main class="flex-grow">
-            <nav class="internal-nav-links text-center mb-12 py-4 border-b border-t border-gray-300">
-                <ul class="flex justify-center space-x-6 flex-wrap">
-                    <li><a href="#uebersicht">Overview</a></li>
-                    <li><a href="#logik">Logic</a></li>
-                    <li><a href="#oekosystem">Ecosystem</a></li>
-                    <li><a href="#innovationen">Innovations</a></li>
-                    <li><a href="#strategie">Strategy</a></li>
-                </ul>
-            </nav>
+        <nav class="internal-nav-links text-center mb-12 py-4 border-b border-t border-gray-300">
+            <ul class="flex justify-center space-x-6 flex-wrap">
+                <li><a href="#uebersicht">Overview</a></li>
+                <li><a href="#logik">Logic</a></li>
+                <li><a href="#oekosystem">Ecosystem</a></li>
+                <li><a href="#innovationen">Innovations</a></li>
+                <li><a href="#strategie">Strategy</a></li>
+            </ul>
+        </nav>
 
+        <main class="flex-grow">
             <section id="uebersicht" class="mb-16">
                 <h2 class="text-4xl font-bold text-gray-900 mb-8 border-b-2 border-sky-600 pb-4 section-title">
                     <strong>PRAI: The Consciousness of the Network</strong>
@@ -251,8 +244,13 @@
         <p>&copy; 2025 RFOF-NETWORK | PRAI - All rights reserved.</p>
         <p class="mt-2">
             <a href="https://github.com/RFOF-NETWORK" target="_blank">GitHub Profile</a> |
-            <a href="feed.xml" target="_blank">Subscribe via RSS Feed</a> |
-            <a href="https://github.com/orgs/skills/discussions/categories/github-pages" target="_blank">Contact / Discussions</a>
+            <a href="https://github.com/orgs/skills/discussions/categories/github-pages" target="_blank">Contact / Discussions</a> |
+            <a href="https://docs.github.com/en/get-started" target="_blank">GitHub Docs</a> |
+            <a href="https://github.com/explore" target="_blank">GitHub Explore</a> |
+            <a href="https://www.githubstatus.com/" target="_blank">System Status</a> |
+            <a href="https://www.contributor-covenant.org/version/2/1/code_of_conduct/code_of_conduct.md" target="_blank">Code of Conduct</a> |
+            <a href="https://gh.io/mit" target="_blank">MIT License</a> |
+            <a href="feed.xml" target="_blank">Subscribe via RSS Feed</a>
         </p>
     </footer>
 
@@ -311,7 +309,7 @@
                                         family: 'Segoe UI, Tahoma, Geneva, Verdana, sans-serif'
                                     },
                                     usePointStyle: true,
-                                    color: '#333'
+                                    color: '#e0e0e0' /* Chart legend text color for dark theme */
                                 }
                             },
                             tooltip: {
@@ -336,7 +334,7 @@
                         scales: {
                             x: {
                                 ticks: {
-                                    color: '#555',
+                                    color: '#e0e0e0', /* Chart axis text color for dark theme */
                                     font: {
                                         size: 12
                                     }
@@ -345,7 +343,7 @@
                             y: {
                                 beginAtZero: true,
                                 ticks: {
-                                    color: '#555',
+                                    color: '#e0e0e0', /* Chart axis text color for dark theme */
                                     font: {
                                         size: 12
                                     }
