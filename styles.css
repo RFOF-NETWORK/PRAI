@@ -1,165 +1,224 @@
-/* Globale Reset- und Basis-Styles */
+/* Global Reset and Base Styles */
 html, body {
     margin: 0;
     padding: 0;
-    width: 100%; /* Stellt sicher, dass der HTML-Bereich die volle Breite einnimmt */
-    overflow-x: hidden; /* **WICHTIG:** Verhindert horizontales Scrollen auf Body/HTML */
-    scroll-behavior: smooth; /* Optional: Sanftes Scrollen */
+    width: 100%;
+    overflow-x: hidden; /* Prevent horizontal scroll */
+    scroll-behavior: smooth;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* A more modern, clean font */
 }
 
 body {
-    font-family: Arial, sans-serif;
     line-height: 1.6;
-    background-color: #f4f4f4; /* Hellgrauer Hintergrund */
-    color: #333;
-    min-height: 100vh; /* Mindesthöhe des Bodys, um Footer am unteren Rand zu "halten" */
+    background-color: #1a1a2e; /* Dark, cyberpunk background */
+    color: #e0e0e0; /* Light text for contrast */
+    min-height: 100vh;
     display: flex;
-    flex-direction: column; /* Ermöglicht Flexbox für Layout (Header, Main, Footer) */
-    position: relative; /* Wichtig für die Positionierung des improve-page-container */
+    flex-direction: column;
+    position: relative;
 }
 
 /* Header Styling */
 .main-header {
-    background-color: white; /* Weißer Hintergrund für den Header */
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1); /* Leichter Schatten */
+    background-color: #0f0f1a; /* Even darker header background */
+    box-shadow: 0 2px 10px rgba(0, 123, 255, 0.4); /* Blue glowing shadow */
     padding: 10px 20px;
-    z-index: 100; /* Stellt sicher, dass der Header über anderen Inhalten liegt */
-    position: relative; /* Für Z-Index und Kontext des Menüs */
+    z-index: 100;
+    position: relative; /* Ensure it stays in flow */
+    border-bottom: 1px solid #007bff; /* Blue border */
 }
 
 .header-content {
-    max-width: 1200px; /* Maximale Breite des Header-Inhalts */
-    margin: 0 auto; /* Zentriert den Header-Inhalt */
+    max-width: 1400px; /* Slightly wider header content */
+    margin: 0 auto;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    padding: 0 15px; /* Add some padding for smaller screens */
 }
 
 .site-title {
-    color: #007bff; /* Babyblau / Telegram/TON Blau für den Titel */
-    font-size: 2em;
+    color: #007bff; /* Baby Blue / Telegram/TON Blue for the title */
+    font-size: 2.2em; /* Slightly larger title */
     font-weight: bold;
     margin: 0;
     padding: 0;
-    flex-shrink: 0; /* Verhindert, dass der Titel schrumpft */
+    flex-shrink: 0;
+    text-shadow: 0 0 8px rgba(0, 123, 255, 0.8); /* More pronounced glow */
 }
 
-/* Container für den Hauptinhalt der Seite (wo Ihre Chatbox drin ist) */
+/* Container for the main page content */
 .content-container {
-    max-width: 800px; /* Maximale Breite des Inhalts */
-    margin: 20px auto; /* **WICHTIG:** Zentriert den Container horizontal und gibt vertikalen Abstand */
-    background: #fff;
-    padding: 30px; /* Genügend Innenabstand */
-    border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    box-sizing: border-box; /* Stellt sicher, dass Padding in max-width enthalten ist */
-    flex-grow: 1; /* Lässt den Inhaltscontainer den verfügbaren Platz einnehmen */
-    overflow: hidden; /* Verhindert, dass interne Elemente über den Container ragen */
-    /* width: calc(100% - 40px); /* Diesen hier entfernen, da max-width und margin auto oft reichen */
+    max-width: 900px; /* Wider content area */
+    margin: 30px auto;
+    background: #2a2a4a; /* Darker background for content */
+    padding: 40px; /* More padding */
+    border-radius: 12px; /* Slightly larger border radius */
+    box-shadow: 0 0 20px rgba(0, 123, 255, 0.3), inset 0 0 10px rgba(0, 123, 255, 0.2); /* Dual glow effect */
+    box-sizing: border-box;
+    flex-grow: 1;
+    overflow: hidden; /* Ensure content stays within bounds */
+    border: 1px solid #007bff; /* Blue border */
 }
 
-/* Media Query für kleinere Bildschirme für den content-container */
-@media (max-width: 840px) { /* Wenn Bildschirm kleiner als 840px ist (800px max-width + 2*20px padding) */
+@media (max-width: 960px) {
     .content-container {
-        margin-left: 20px; /* Festen Rand links */
-        margin-right: 20px; /* Festen Rand rechts */
-        width: auto; /* Breite automatisch anpassen, um Padding zu berücksichtigen */
+        margin-left: 20px;
+        margin-right: 20px;
+        width: auto;
+        padding: 25px; /* Adjust padding for smaller screens */
+    }
+}
+@media (max-width: 600px) {
+    .content-container {
+        padding: 15px;
     }
 }
 
-
 h1, h2, h3, h4, h5, h6 {
-    color: #2c3e50;
+    color: #4CAF50; /* Greenish glow for headings */
+    text-shadow: 0 0 6px rgba(76, 175, 80, 0.6);
 }
 
-/* Stil für Links im Text */
+p {
+    color: #e0e0e0; /* Ensure body text color is applied to paragraphs */
+}
+
 a {
-    color: #007bff;
+    color: #00eaff; /* Bright cyan for links */
     text-decoration: none;
+    transition: color 0.3s ease, text-shadow 0.3s ease;
 }
 
 a:hover {
     text-decoration: underline;
+    color: #4CAF50; /* Greenish on hover */
+    text-shadow: 0 0 5px rgba(76, 175, 80, 0.5);
 }
 
-/* Regel für lange Wörter, um den Überlauf zu verhindern (falls in der Chatbox benötigt) */
 .long-word-wrap-text {
-    word-wrap: break-word; /* Bricht Wörter, wenn sie zu lang für die Zeile sind (älterer Standard) */
-    overflow-wrap: break-word; /* Eine modernere Alternative zu word-wrap */
-    hyphens: auto; /* Optional: Erlaubt Silbentrennung für bessere Lesbarkeit */
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    hyphens: auto;
 }
 
 /* Footer Styling */
 footer {
     text-align: center;
-    padding: 20px;
-    margin-top: auto; /* Schiebt den Footer an den unteren Rand */
-    background-color: #333; /* Dunkelgrau wie gewünscht */
-    color: #f4f4f4;
-    border-top: 1px solid #ddd;
-    width: 100%; /* Stellt sicher, dass der Footer die volle Breite einnimmt */
-    flex-shrink: 0; /* Verhindert, dass der Footer schrumpft */
-    box-sizing: border-box; /* Stellt sicher, dass Padding in der Breite enthalten ist */
+    padding: 25px; /* More padding */
+    margin-top: auto;
+    background-color: #0f0f1a; /* Dark background */
+    color: #a0a0a0; /* Softer text color */
+    border-top: 1px solid #007bff; /* Blue border */
+    width: 100%;
+    flex-shrink: 0;
+    box-sizing: border-box;
+    font-size: 0.9em;
+    box-shadow: 0 -2px 10px rgba(0, 123, 255, 0.4); /* Blue glowing shadow */
 }
 
-/* Styling für den "Improve this page" Container und Link */
+footer p {
+    margin-bottom: 5px;
+}
+
+footer a {
+    color: #00eaff; /* Bright cyan for footer links */
+    margin: 0 10px;
+}
+
+footer a:hover {
+    color: #4CAF50; /* Greenish on hover */
+    text-shadow: 0 0 3px rgba(76, 175, 80, 0.5);
+}
+
+/* Styling for the "Improve this page" Container and Link */
 .improve-page-container {
-    position: absolute; /* Positioniert relativ zum body */
-    bottom: 80px; /* Abstand vom unteren Rand des Viewports (über dem Footer) */
-    right: 20px; /* Abstand vom rechten Rand des Viewports */
-    font-size: 0.9em;
-    color: #555; /* Etwas dunkler als der Footer-Text */
-    text-align: right;
-    width: auto; /* Passt die Breite an den Inhalt an */
-    white-space: nowrap; /* Verhindert, dass der Text umbricht */
-    z-index: 90; /* Sorgt dafür, dass es über dem Hauptinhalt liegt, aber unter dem Header/Menü */
+    text-align: center;
+    padding: 15px;
+    margin: 20px auto;
+    max-width: 800px;
+    background-color: #2a2a4a;
+    border: 1px solid #007bff;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 123, 255, 0.3);
+    color: #e0e0e0;
+    font-size: 1em;
+    /* Removed position: relative here as it's often not needed and can conflict */
+}
+
+.improve-page-container p {
+    margin: 0;
 }
 
 .improve-page-container a.improve-page-link {
-    color: #007bff; /* Babyblau / Telegram/TON Blau */
+    color: #4CAF50; /* Greenish glow for action link */
     text-decoration: underline;
     font-weight: bold;
+    text-shadow: 0 0 5px rgba(76, 175, 80, 0.7);
 }
 
 .improve-page-container a.improve-page-link:hover {
-    color: #4CAF50; /* Beispiel für einen Hover-Effekt */
+    color: #00eaff; /* Cyan on hover */
+    text-shadow: 0 0 8px rgba(0, 234, 255, 0.8);
 }
 
-/* --- Ihre ursprünglichen Chatbox-Styles (Anpassung, falls nötig) --- */
-#chatbox {
-    margin-bottom: 20px; /* Abstand zur Unterseite der main section */
-    /* Weitere spezifische Styles für Ihre Chatbox, falls sie nicht responsive ist */
+/* Content specific styles */
+.content-container p {
+    margin-bottom: 1em;
 }
 
-#user-input {
-    width: 100%;
-    min-height: 100px;
-    padding: 10px;
-    margin-bottom: 10px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    box-sizing: border-box; /* Wichtig für die Breite */
+.content-container ul {
+    list-style-type: none; /* Remove default bullets */
+    margin-left: 0;
+    padding-left: 20px; /* Add padding for visual alignment */
+    margin-bottom: 1em;
 }
 
-button {
-    background-color: #007bff;
-    color: white;
-    padding: 10px 15px;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-    font-size: 1em;
+.content-container ul li {
+    position: relative;
+    padding-left: 25px; /* Space for custom bullet */
+    margin-bottom: 0.5em;
 }
 
-button:hover {
-    background-color: #0056b3;
+.content-container ul li::before {
+    content: '\2022'; /* Unicode bullet point */
+    color: #4CAF50; /* Greenish bullet */
+    position: absolute;
+    left: 0;
+    font-size: 1.2em;
+    line-height: 1;
 }
 
-#response-output {
-    margin-top: 20px;
-    padding: 10px;
-    border: 1px solid #eee;
-    background-color: #f9f9f9;
-    border-radius: 4px;
-    min-height: 50px;
+.content-container h1, .content-container h2, .content-container h3 {
+    margin-top: 1.5em;
+    margin-bottom: 0.8em; /* Slightly more space below headings */
 }
+
+/* Responsive image styling for hero section */
+#hero img {
+    max-width: 100%;
+    height: auto;
+}
+
+/* Internal Navigation for Sections Styling */
+.internal-nav-links {
+    background-color: #1f1f3a; /* Slightly lighter dark background */
+    padding: 10px 0;
+    margin-bottom: 30px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 123, 255, 0.2);
+    border: 1px solid rgba(0, 123, 255, 0.5);
+}
+
+.internal-nav-links ul {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.internal-nav-links li {
+    margin: 0 15px;
+}
+/* Styles for links within internal-nav-links are now in the <style> tag of index.html for clarity of specific styling */
